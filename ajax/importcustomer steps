@@ -1,0 +1,8 @@
+magento 2.2.6
+1) create empty database
+2) export setup zip
+3) install it from browser
+4) run this cmd php bin/magento setup:static-content:deploy -f -s standard
+5) download migration tool 	composer require magento/data-migration-tool:2.2.6
+6) php bin/magento migrate:settings vendor/magento/data-migration-tool/etc/opensource-to-opensource/1.9.2.2/config.xml
+7) php bin/magento migrate:data -a vendor/magento/data-migration-tool/etc/opensource-to-opensource/1.9.2.2/config.xml

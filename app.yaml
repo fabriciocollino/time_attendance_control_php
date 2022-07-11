@@ -1,0 +1,114 @@
+#gcloud app deploy --project 'enpunto-1286' --version 1
+
+#application: enpunto-1286
+#version: 1
+runtime: php55
+service: dev
+#api_version: 1
+
+#runtime: php72
+#env: flex
+
+instance_class: F1
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: 1
+  min_pending_latency: 3000ms #default 30ms
+  max_pending_latency: automatic  #default 30ms
+
+handlers:
+
+  # - url: /maincron
+  #   script: cron.php
+  #   login: admin
+
+  # - url: /cron-message
+  #    script: cron_message.php
+  #   login: admin
+
+  - url: /cron_reportes_automaticos
+    script: cron_reportes_automaticos.php
+    login: admin
+
+  - url: /cron_alertas
+    script: cron_alertas.php
+    login: admin
+
+  #  url: /demo-data-generator
+  #  script: demo.php
+  #  login: admin
+
+  - url: /api.*
+    script: api.php
+
+    #- url: /demo.php
+    # script: demo.php
+    # login: admin
+    # secure: always
+
+  - url: /task
+    script: task.php
+    login: admin
+    secure: always
+
+
+  - url: /(.+\.(ico|jpg|png|gif|pdf))$
+    static_files: \1
+    upload: (.+\.(ico|jpg|png|gif|pdf))$
+    application_readable: true
+    secure: always
+
+  - url: /(.+\.(htm|html|css|js))$
+    static_files: \1
+    upload: (.+\.(htm|html|css|js))$
+    application_readable: true
+    secure: always
+
+  - url: /(.+\.(json))$
+    static_files: \1
+    upload: (.+\.(json))$
+    application_readable: true
+    mime_type: application/json
+    secure: always
+
+  - url: /(.+\.(otf))$
+    static_files: \1
+    upload: (.+\.(otf))$
+    mime_type: application/x-font-otf
+    secure: always
+
+  - url: /(.+\.(woff))$
+    static_files: \1
+    upload: (.+\.(woff))$
+    mime_type: application/x-font-woff
+    secure: always
+
+  - url: /(.+\.(woff2))$
+    static_files: \1
+    upload: (.+\.(woff2))$
+    mime_type: application/font-woff2
+    secure: always
+
+  - url: /(.+\.(mp3))$
+    static_files: \1
+    upload: (.+\.(mp3))$
+    mime_type: audio/mpeg
+    secure: always
+
+  - url: /(.+\.(ogg))$
+    static_files: \1
+    upload: (.+\.(ogg))$
+    mime_type: audio/ogg
+    secure: always
+
+  - url: /(.+\.php)$
+    script: \1
+    secure: always
+
+  - url: /(.+)
+    script: \1.php
+    secure: always
+
+  - url: /
+    script: index.php
+    secure: always

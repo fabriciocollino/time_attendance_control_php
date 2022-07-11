@@ -1,0 +1,34 @@
+
+cron:
+#- description: main cronjob
+#url: /cron
+# schedule: every 1 mins
+
+#- description: cronjob notificaciones
+#url: /cron-notificaciones
+#schedule: every 5 mins
+
+- description: cronjob reportes_automaticos
+  url: /cron_reportes_automaticos
+  schedule: every 1 mins
+
+- description: cronjob suscripciones
+  url: /cron_suscripciones
+  schedule: every 24 hours
+
+#- description: cronjob alertas
+#  url: /cron_alertas
+#  schedule: every 1 mins
+
+#- description: cronjob message
+#  url: /cron-message
+#  schedule: every 10 mins
+
+#- description: demo data generator
+#  url: /demo-data-generator
+#  schedule: every day 01:00
+#  timezone: America/Argentina/Cordoba
+
+#-description: cronjob licencias
+#  url: /cron-licencias
+#  schedule: every 3 hours

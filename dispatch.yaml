@@ -1,0 +1,20 @@
+
+dispatch:
+
+  - url: "*/api/v2/*"
+    service: backend
+
+  #- url: "*/api/v3/*"
+  #  service: backendtest
+
+  - url: "manager.enpuntocontrol.com/*"
+    service: manager
+
+  - url: "dev.enpuntocontrol.com/*"
+    service: dev
+
+  - url: "sdev.enpuntocontrol.com/*"
+    service: dev
+
+  - url: "devlucas.enpuntocontrol.com/*"
+    service: devlucas

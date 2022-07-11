@@ -1,0 +1,39 @@
+{
+  "name": "tekbox/enpunto",
+  "description": "enPunto TASM",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Diego Sucaria",
+      "email": "diegosucaria@gmail.com"
+    }
+  ],
+  "require": {
+    "google/cloud": "^v0.11.0",
+    "ext-mysqli" : "*",
+    "ext-iconv": "*",
+    "ext-json": "*",
+    "ext-zip": "*",
+    "ext-curl": "*",
+    "ext-xml": "*",
+    "ext-xmlwriter": "*",
+    "ext-mbstring": "*",
+    "google/apiclient": "*",
+    "league/oauth2-google": "*",
+    "symfony/polyfill-mbstring": "^1.15",
+    "gettext/gettext": "*",
+    "phpseclib/phpseclib": "~2.0",
+    "ext-gd": "*",
+    "google/appengine-php-sdk": "*",
+    "google/cloud-storage": "*",
+    "monolog/monolog": "^1.0",
+    "phpoffice/phpexcel": "^1.8",
+    "mercadopago/dx-php": "*"
+  },
+  "config": {
+    "platform": {
+      "php": "5.5"
+    }
+  }
+}

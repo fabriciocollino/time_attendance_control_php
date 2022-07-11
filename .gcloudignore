@@ -1,0 +1,23 @@
+.DS_Store
+.idea
+*.idea
+
+.git
+.gitignore
+
+readme.md
+
+# ignoramos los estaticos. (estos se suben al cdn)
+/sound
+/js
+/img
+/fonts
+/css
+
+# comandos para subir los archivos al bucket estatico del cdn
+#
+# gsutil -m cp -rzv sound gs://static.enpuntocontrol.com/app/v1/
+# gsutil -m cp -rZv js gs://static.enpuntocontrol.com/app/v1/
+# gsutil -m cp -rzv img gs://static.enpuntocontrol.com/app/v1/
+# gsutil -m cp -rZv fonts gs://static.enpuntocontrol.com/app/v1/
+# gsutil -m cp -rZv css gs://static.enpuntocontrol.com/app/v1/

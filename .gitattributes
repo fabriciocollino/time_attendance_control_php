@@ -1,0 +1,3 @@
+app.yaml merge=ours
+cron.yaml merge=ours
+dispatch.yaml merge=ours
